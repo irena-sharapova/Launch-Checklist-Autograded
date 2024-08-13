@@ -22,24 +22,16 @@ window.addEventListener("load", function () {
     let listedPlanets;
     let listedPlanetsResponse = myFetch();
     listedPlanetsResponse.then(function (result) {
-        listedPlanets = result.json().then(function (json) {
-            const destinationPlanet = pickPlanet(json);
-           // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-            addDestinationInfo(
-                document,
-                destinationPlanet.name,
-                destinationPlanet.diameter,
-                destinationPlanet.star,
-                destinationPlanet.distance,
-                destinationPlanet.moons,
-                destinationPlanet.image
-            );
-        });
-    });
+        listedPlanets = result;
+        const destinationPlanet = pickPlanet(listedPlanets);
+        addDestinationInfo(
+            document,
+            destinationPlanet.name,
+            destinationPlanet.diameter,
+            destinationPlanet.star,
+            destinationPlanet.distance,
+            destinationPlanet.moons,
+            destinationPlanet.image
+        );
+    })
 });
-
-
-
-
-
-
