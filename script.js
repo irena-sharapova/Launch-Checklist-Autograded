@@ -15,10 +15,6 @@ window.addEventListener("load", function () {
 
     });
 
-    // myFetch().then(function(planets) {
-    //     console.log(planets);
-    // });
-
     let listedPlanets;
     let listedPlanetsResponse = myFetch();
     listedPlanetsResponse.then(function (result) {
